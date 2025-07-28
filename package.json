@@ -1,0 +1,15 @@
+{
+  "name": "ks-tfjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/run.mjs"
+  },
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Ingus Skaistkalns",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0"
+  }
+}
