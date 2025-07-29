@@ -1,9 +1,9 @@
 const tf = await import("@tensorflow/tfjs-node");
 
-export const windowSize = 30;
+export const windowSize = 28;
 export const lstmUnits = 96;
 export const denseUnits = 64;
-export const epochs = 15;
+export const epochs = 10;
 export const refit = 2;
 
 export async function createModel(windowSize, lstmUnits) {
@@ -31,7 +31,7 @@ export async function createModel(windowSize, lstmUnits) {
 export async function fitModel(model, xs, ys, epochs = 10) {
   const history = await model.fit(xs, ys, {
     epochs,
-    validationSplit: 0.2,
+    validationSplit: 0.15,
     callbacks: tf.callbacks.earlyStopping({
       patience: 6,
       restoreBestWeight: true,

@@ -2,7 +2,6 @@ import {
   normalize,
   createTensors,
   createModel,
-  createModelFat,
   buildValidationXTrain,
   windowSize,
   lstmUnits,
@@ -296,8 +295,8 @@ console.log({
 });
 
 let series = createTensors(matrix, windowSize);
-let model = await createModelFat(windowSize, lstmUnits, denseUnits);
-let cModel = await createModelFat(windowSize, lstmUnits, denseUnits);
+let model = await createModel(windowSize, lstmUnits, denseUnits);
+let cModel = await createModel(windowSize, lstmUnits, denseUnits);
 let xs = series.xs;
 let ys = series.ys;
 let xTrainValid = buildValidationXTrain(matrix, normalizedFullData, windowSize);
